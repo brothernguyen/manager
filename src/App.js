@@ -2,14 +2,28 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import reducers from './reducers';
+import firebase from 'firebase';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
+
+    componentWillMount() {
+        const config = {
+            apiKey: "AIzaSyDh554V_usebc1hRvNQOzTrl6545Fjb8nM",
+            authDomain: "manager-4c8a3.firebaseapp.com",
+            databaseURL: "https://manager-4c8a3.firebaseio.com",
+            projectId: "manager-4c8a3",
+            storageBucket: "manager-4c8a3.appspot.com",
+            messagingSenderId: "300563159842"
+          };
+          firebase.initializeApp(config);
+    }
+
     render() {
         return(
-            <Provider store={createStore()}>
-                <View>
-                    <Text>Hello!!!</Text>    
-                </View>                
+            <Provider store={createStore(reducers)}>
+                <LoginForm />               
             </Provider>
         );
     }
