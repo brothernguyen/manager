@@ -10,18 +10,18 @@ class App extends Component {
 
     componentWillMount() {
         const config = {
-            apiKey: "AIzaSyDh554V_usebc1hRvNQOzTrl6545Fjb8nM",
-            authDomain: "manager-4c8a3.firebaseapp.com",
-            databaseURL: "https://manager-4c8a3.firebaseio.com",
-            projectId: "manager-4c8a3",
-            storageBucket: "manager-4c8a3.appspot.com",
-            messagingSenderId: "300563159842"
+            apiKey: 'AIzaSyDh554V_usebc1hRvNQOzTrl6545Fjb8nM',
+            authDomain: 'manager-4c8a3.firebaseapp.com',
+            databaseURL: 'https://manager-4c8a3.firebaseio.com',
+            projectId: 'manager-4c8a3',
+            storageBucket: 'manager-4c8a3.appspot.com',
+            messagingSenderId: '300563159842'
           };
           firebase.initializeApp(config);
     }
 
     render() {
-        return(
+        return (
             <Provider store={createStore(reducers)}>
                 <LoginForm />               
             </Provider>
